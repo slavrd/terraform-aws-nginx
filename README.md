@@ -71,3 +71,7 @@ key_files:
 * Run kitchen tests - `bundle exec kitchen verify`
 * Destroy kitchen environment - `bundle exec kitchen destroy`
 * Automatically build, test, destroy - `bundle exec kitchen test`
+
+A passed Kitchen-CI test should look like:
+
+![Kitchen-CI tests](screenshots/kitchen-passed.png)
