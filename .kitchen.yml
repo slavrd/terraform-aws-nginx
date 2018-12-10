@@ -1,0 +1,27 @@
+---
+driver:
+  name: terraform
+  variable_files:
+    - test.tfvars
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: ubuntu-nginx
+
+verifier:
+  name: terraform
+  format: doc
+  systems:
+    - name: default
+      backend: ssh
+      user: ubuntu
+      key_files:
+        - ~/.ssh/id_rsa
+      hosts_output: nginx_public_dns
+      controls:
+        - local_system
+
+suites:
+  - name: default
